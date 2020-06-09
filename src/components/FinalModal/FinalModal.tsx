@@ -42,12 +42,18 @@ const FinalModal = () => {
 const Wrapper = styled.section.attrs({
   'data-test': 'FinalModalComponent',
 })<EndPropT>`
-  display: ${({ end }) => (end ? 'block' : 'none')};
+  display: ${({ end }) => (end ? 'flex' : 'none')};
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: 101;
   background: #fff;
+  flex-direction: column;
+    justify-content: center;
+  @media ${device.tabletP}, ${device.tabletL} {
+    display: ${({ end }) => (end ? 'block' : 'none')};
+    font-size: 45px;
+  }
 
   &:after {
     content: '';
@@ -59,6 +65,7 @@ const Wrapper = styled.section.attrs({
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: -1;
     @media ${device.mobileM} {
       border-bottom: calc(40vw + 2px) solid #7cebaf;
       border-left: calc(40vw + 2px) solid transparent;
@@ -74,25 +81,34 @@ const Wrapper = styled.section.attrs({
 const Title = styled.p.attrs({
   'data-test': 'TitleComponent',
 })`
-  font-size: 45px;
+  font-size: 40px;
   text-align: center;
   margin-top: 10%;
+  @media ${device.tabletP}, ${device.tabletL} {
+    font-size: 45px;
+  }
 `;
 
 const SubTitle = styled.p`
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   margin-top: 30px;
+  @media ${device.tabletP}, ${device.tabletL} {
+    font-size: 30px;
+  }
 `;
 
 const Password = styled.p.attrs({
   'data-test': 'PasswordComponent',
 })`
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   letter-spacing: 1px;
   margin-top: 10px;
+  @media ${device.tabletP}, ${device.tabletL} {
+    font-size: 40px;
+  }
 `;
 
 const RestartButton = styled.button.attrs({

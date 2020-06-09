@@ -11,7 +11,37 @@ import LoadingModal from '../LoadingModal';
 import HangMan from '../HangMan/HangMan';
 import getWord from '../../utils/getWord';
 import showLetter from '../../utils/showLetter';
+import Keyboard from "../Keyboard";
 // @ts-ignore
+
+const keyboardLetters = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'r',
+  's',
+  't',
+  'u',
+  'w',
+  'v',
+  'q',
+  'x',
+  'y',
+  'z',
+]
 
 const App: React.FC = () => {
   const { state, dispatch } = React.useContext(Store);
@@ -21,6 +51,7 @@ const App: React.FC = () => {
   }, []);
 
   const handleKeyPress = ({ key, keyCode }: KeyboardEvent) => {
+
     if (keyCode >= 65 && keyCode <= 90 && state.end === false) {
       const letter = key.toUpperCase();
 
@@ -44,36 +75,10 @@ const App: React.FC = () => {
         <CheckedLetters />
         <Word />
         <KeyboardEventHandler
-          handleKeys={[
-            'a',
-            'b',
-            'c',
-            'd',
-            'e',
-            'f',
-            'g',
-            'h',
-            'i',
-            'j',
-            'k',
-            'l',
-            'm',
-            'n',
-            'o',
-            'p',
-            'r',
-            's',
-            't',
-            'u',
-            'w',
-            'v',
-            'q',
-            'x',
-            'z',
-            'y',
-          ]}
+          handleKeys={keyboardLetters}
           onKeyEvent={(key: string, e: KeyboardEvent) => handleKeyPress(e)}
         />
+        <Keyboard keyboardLetters={keyboardLetters} handleKeyPress={(e: any) => handleKeyPress(e)} />
         <FinalModal />
         <LoadingModal />
       </>

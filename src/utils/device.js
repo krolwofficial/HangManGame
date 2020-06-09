@@ -12,6 +12,7 @@ const device = {
   // mobileS: `(min-width: ${size.mobileS})`,
   mobileM: `(min-width: ${size.mobileS})`,
   mobileL: `(min-width: ${size.mobileM})`,
+  tablet: `(min-width: ${size.mobileL})`,
   tabletP: `(min-width: ${size.mobileL}) and (orientation: portrait)`,
   tabletL: `(min-width: ${size.mobileL}) and (orientation: landscape)`,
   laptop: `(min-width: ${size.tablet})`,

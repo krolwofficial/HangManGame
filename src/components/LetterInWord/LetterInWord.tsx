@@ -16,16 +16,22 @@ const LetterInWord = ({ letter: { letter, show } }: LetterI) => {
 const LetterWrapper = styled.li.attrs({
   'data-test': 'LetterWrapperComponent',
 })<ShowPropT>`
-  background: ${({ show }) => (show ? '#00d664' : '#fafafa')};
+  background: ${({ show }) => (show ? '#00d664' : 'transparent')};
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 3px;
   box-sizing: border-box;
   margin: 5px;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   color: white;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #222;
+
   @media ${device.mobileM} {
+    width: 35px;
+    height: 35px;
+  }
+  @media ${device.tablet} {
+   border-radius: 5px;
     width: 40px;
     height: 40px;
   }

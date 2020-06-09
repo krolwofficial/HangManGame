@@ -38,10 +38,11 @@ const Wrapper = styled.section.attrs({
 
 const Title = styled.p`
   font-weight: 700;
-  font-size: 15px;
+  font-size: 12px;
   padding-bottom: 10px;
   text-align: center;
-  @media ${device.mobileM} {
+  
+  @media ${device.tablet} {
     font-size: 20px;
   }
   @media ${device.laptop} {
@@ -54,6 +55,14 @@ const List = styled.ul`
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  min-height: 18px;
+  
+  @media ${device.tablet} {
+    min-height: 35px;
+  }
+  @media ${device.laptop} {
+    min-height: 55px;
+  }
 `;
 
 const Letter = styled.li.attrs({
@@ -61,9 +70,10 @@ const Letter = styled.li.attrs({
 })`
   font-weight: 700;
   list-style: none;
-  font-size: 25px;
-  padding: 0 5px;
-  @media ${device.mobileM} {
+  font-size: 18px;
+  padding: 0 3px;
+  @media ${device.tablet} {
+    padding: 0 5px;
     font-size: 35px;
   }
   @media ${device.laptop} {

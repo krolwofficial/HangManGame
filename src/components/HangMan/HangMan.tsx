@@ -44,15 +44,19 @@ const Wrapper = styled.div.attrs({
   'data-test': 'HangManComponent',
 })`
   width: 300px;
-  height: 220px;
+  height: 210px;
   z-index: 2;
-  @media ${device.mobileM} {
-    height: 260px;
-  }
+  // @media ${device.mobileM} {
+  //   height: 220px;
+  // }
   @media ${device.mobileL} {
-    height: 280px;
+    height: 220px;
   }
 
+  @media ${device.tabletP} {
+    height: 280px;
+  }
+  
   @media ${device.tabletL} {
     width: 230px;
     height: 220px;
@@ -66,11 +70,13 @@ const Wrapper = styled.div.attrs({
 const HangManImage = styled.div`
   position: relative;
   width: calc(50% - 180px);
-  transform: scale(0.35);
-  @media ${device.mobileM} {
-    transform: scale(0.4);
-  }
+  transform: scale(0.30);
+  
   @media ${device.mobileL} {
+    transform: scale(0.35);
+  }
+  
+  @media ${device.tabletP} {
     transform: scale(0.45);
   }
 
