@@ -13,6 +13,7 @@ Techs used in project:
 * TypeScript
 * Jest & Enzyme
 * Styled Component & SCSS
+* AWS Amplify
 * jQuery - just kidding
 
 
