@@ -2,27 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import device from '../../utils/device';
 
-const Keyboard = ({keyboardLetters, handleKeyPress}: any) => {
-
+const Keyboard = ({ keyboardLetters, handleKeyPress }: any) => {
   const handleClick = (letter: any) => {
     const e = {
       key: letter,
-      keyCode: letter.charCodeAt(0) - 32
-    }
-    handleKeyPress(e)
-  }
+      keyCode: letter.charCodeAt(0) - 32,
+    };
+    handleKeyPress(e);
+  };
 
   return (
     <Wrapper>
-      {keyboardLetters.map((letter: any, index: number) => {
-        return (
-          <LetterWrapper key={index} onClick={() => handleClick(letter)}>
-            <Letter >
-              {letter}
-            </Letter>
-          </LetterWrapper>
-        )
-      })}
+      {keyboardLetters &&
+        keyboardLetters.map((letter: any, index: number) => {
+          return (
+            <LetterWrapper key={index} onClick={() => handleClick(letter)}>
+              <Letter>{letter}</Letter>
+            </LetterWrapper>
+          );
+        })}
     </Wrapper>
   );
 };
@@ -55,7 +53,7 @@ const LetterWrapper = styled.li.attrs({
   color: white;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  
+
   @media ${device.mobileM} {
     width: 40px;
     height: 40px;
@@ -74,6 +72,7 @@ const Letter = styled.p`
   height: 100%;
   justify-content: center;
   color: #222;
+  user-select: none;
   @media ${device.tablet} {
     font-size: 24px;
   }

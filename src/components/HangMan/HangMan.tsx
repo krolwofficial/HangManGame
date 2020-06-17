@@ -70,12 +70,12 @@ const Wrapper = styled.div.attrs({
 const HangManImage = styled.div`
   position: relative;
   width: calc(50% - 180px);
-  transform: scale(0.30);
-  
+  transform: scale(0.3);
+
   @media ${device.mobileL} {
     transform: scale(0.35);
   }
-  
+
   @media ${device.tabletP} {
     transform: scale(0.45);
   }

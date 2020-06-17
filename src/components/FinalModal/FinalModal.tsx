@@ -49,7 +49,7 @@ const Wrapper = styled.section.attrs({
   z-index: 101;
   background: #fff;
   flex-direction: column;
-    justify-content: center;
+  justify-content: center;
   @media ${device.tabletP}, ${device.tabletL} {
     display: ${({ end }) => (end ? 'block' : 'none')};
     font-size: 45px;

@@ -31,7 +31,7 @@ const LetterWrapper = styled.li.attrs({
     height: 35px;
   }
   @media ${device.tablet} {
-   border-radius: 5px;
+    border-radius: 5px;
     width: 40px;
     height: 40px;
   }

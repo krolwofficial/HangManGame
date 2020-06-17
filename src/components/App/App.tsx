@@ -11,7 +11,7 @@ import LoadingModal from '../LoadingModal';
 import HangMan from '../HangMan/HangMan';
 import getWord from '../../utils/getWord';
 import showLetter from '../../utils/showLetter';
-import Keyboard from "../Keyboard";
+import Keyboard from '../Keyboard';
 // @ts-ignore
 
 const keyboardLetters = [
@@ -41,7 +41,7 @@ const keyboardLetters = [
   'x',
   'y',
   'z',
-]
+];
 
 const App: React.FC = () => {
   const { state, dispatch } = React.useContext(Store);
@@ -51,7 +51,6 @@ const App: React.FC = () => {
   }, []);
 
   const handleKeyPress = ({ key, keyCode }: KeyboardEvent) => {
-
     if (keyCode >= 65 && keyCode <= 90 && state.end === false) {
       const letter = key.toUpperCase();
 
@@ -78,7 +77,10 @@ const App: React.FC = () => {
           handleKeys={keyboardLetters}
           onKeyEvent={(key: string, e: KeyboardEvent) => handleKeyPress(e)}
         />
-        <Keyboard keyboardLetters={keyboardLetters} handleKeyPress={(e: any) => handleKeyPress(e)} />
+        <Keyboard
+          keyboardLetters={keyboardLetters}
+          handleKeyPress={(e: any) => handleKeyPress(e)}
+        />
         <FinalModal />
         <LoadingModal />
       </>
@@ -169,6 +171,8 @@ const Main = styled.main.attrs({
     max-height: none;
     height: 450px;
     width: 760px;
+    margin-left: 0;
+    margin-top: 0;
   }
 
   @media ${device.laptopL} {

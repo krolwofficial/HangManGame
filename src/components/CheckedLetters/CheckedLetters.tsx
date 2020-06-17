@@ -41,7 +41,7 @@ const Title = styled.p`
   font-size: 12px;
   padding-bottom: 10px;
   text-align: center;
-  
+
   @media ${device.tablet} {
     font-size: 20px;
   }
@@ -56,7 +56,7 @@ const List = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   min-height: 18px;
-  
+
   @media ${device.tablet} {
     min-height: 35px;
   }
